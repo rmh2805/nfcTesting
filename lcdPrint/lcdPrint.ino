@@ -15,8 +15,6 @@ void setup() {
     lcd = new LiquidCrystal(rs, en, d4, d5, d6, d7);
     lcd->begin(20, 4);
     lcd->print("Initializing...");
-
-    pinMode(13, INPUT_PULLUP);
     
     nfc = new Adafruit_PN532(PN532_IRQ, PN532_RESET);
     nfc->begin();
@@ -42,7 +40,6 @@ void setup() {
 }
 
 void loop() {
-    while(digitalRead(13) == HIGH);
     
     // put your main code here, to run repeatedly:
     uint8_t success;
